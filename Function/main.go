@@ -7,15 +7,16 @@ import "fmt"
 // 	fmt.Println("Sugar added : ", isSugar)
 // }
 
-func makeCoffee(kind string) string {
+func makeCoffee(kind string) (string, int) {
 	coffee := fmt.Sprintf("%s Coffee!", kind)
-	return coffee
+	price := 30
+	return coffee, price
 }
 
 func main() {
 	// makeCoffee("Espresso", false)
 	// makeCoffee("Latte", true)
 
-	myCoffee := makeCoffee("Cappuccino")
-	fmt.Println("I am having", myCoffee)
+	myCoffee, mybill := makeCoffee("Cappuccino")
+	fmt.Printf("I am having a %d$ %s \n", mybill, myCoffee)
 }
